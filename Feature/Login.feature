@@ -9,3 +9,5 @@ Scenario: Login user as standard user
 		| standard_user | secret_sauce |
 	And I click login
 	Then I should be logged in the application
+
+

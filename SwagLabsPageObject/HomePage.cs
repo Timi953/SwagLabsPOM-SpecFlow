@@ -29,7 +29,19 @@ namespace SwagLabsPOM.SwagLabsPageObject
 
         IWebElement closeBtn => driver.FindElement(By.Id(HomePageConstants.ID_MENU_CLOSE_BTN));
 
+        IWebElement itemsClass => driver.FindElement(By.ClassName(HomePageConstants.ID_ITEMS_CLASS));
+
         #endregion
 
+
+        public bool ItemNamesDisplayed()
+        {
+
+            if (itemsClass.Text != null)
+            {
+                return true;
+            }
+            else return false;
+        }
     }
 }

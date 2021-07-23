@@ -39,7 +39,7 @@ namespace SwagLabsPOM.Steps
         [Then(@"I should be logged in the application")]
         public void ThenIShouldBeLoggedInTheApplication()
         {
-            Assert.That(LandingPage.GetCurrentUrl(), Is.EqualTo("https://www.saucedemo.com/inventory.html"));
+            Assert.That(LandingPage.GetCurrentUrl(), Is.EqualTo("https://www.saucedemo.com/inventory.html")); 
         }
 
 

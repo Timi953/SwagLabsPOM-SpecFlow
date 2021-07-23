@@ -21,5 +21,7 @@ namespace SwagLabsPOM.PageConstants
         public static string ID_MENU_RESETAPPSTATE_BTN = "reset_sidebar_link";
         public static string ID_MENU_CLOSE_BTN = "react-burger-cross-btn";
 
+
+        public static string ID_ITEMS_CLASS = "inventory_item_name";
     }
 }
