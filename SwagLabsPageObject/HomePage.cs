@@ -36,12 +36,21 @@ namespace SwagLabsPOM.SwagLabsPageObject
 
         public bool ItemNamesDisplayed()
         {
+            var itemsList = itemsClass.FindElements(By.ClassName(HomePageConstants.ID_ITEMS_CLASS));
 
-            if (itemsClass.Text != null)
+            var isValid = true;
+
+            for (int i = 0; i < itemsList.Count; i++)
             {
-                return true;
+                
+                if (itemsClass.Text == null)
+                {
+                    isValid = false;
+                    break;
+                }
             }
-            else return false;
+            return isValid;
+
         }
     }
 }

@@ -13,7 +13,10 @@ namespace SwagLabsPOM.Steps
     [Binding]
     public class ItemNamesDisplayedSteps
     {
-        
+        HomePage homePage = new HomePage();
+        LandingPage landingPage = new LandingPage();
+
+
         [Given(@"I navigate to the app")]
         public void GivenINavigateToTheApp()
         {
@@ -22,23 +25,20 @@ namespace SwagLabsPOM.Steps
 
         [Given(@"i login")]
         public void GivenILogin()
-        {
-            LandingPage landingPage = new LandingPage();
+        {            
             landingPage.LoginOperation(UserConstants.ID_STANDARD_USER, UserConstants.ID_PASSWORD);
         }
 
         [When(@"i look at the item names")]
         public void WhenILookAtTheItemNames()
         {
-            HomePage home = new HomePage();
-            home.ItemNamesDisplayed();
+            homePage.ItemNamesDisplayed();
         }
 
         [Then(@"the names should be displayed")]
         public void ThenTheNamesShouldBeDisplayed()
-        {
-            HomePage home = new HomePage();
-            Assert.IsTrue(home.ItemNamesDisplayed());
+        {            
+            Assert.IsTrue(homePage.ItemNamesDisplayed());
         }
 
     }
