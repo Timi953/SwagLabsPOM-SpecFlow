@@ -13,17 +13,17 @@ namespace SwagLabsPOM.Hooks
         [BeforeScenario]
         public void BeforeScenario()
         {
-            LandingPage.open_driver(DriverCollection.Browser.Chrome);
-            DriverCollection.driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(10);
-            DriverCollection.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            open_driver(Browser.Chrome);
+            driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(10);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
         [AfterScenario]
         public void AfterScenario()
         {
-            DriverCollection.driver.Close();
-            DriverCollection.driver.Quit();
-            DriverCollection.driver.Dispose();
+            driver.Close();
+            driver.Quit();
+            driver.Dispose();
         }
     }
 }

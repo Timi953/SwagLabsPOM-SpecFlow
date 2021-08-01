@@ -11,7 +11,7 @@ using TechTalk.SpecFlow;
 namespace SwagLabsPOM.Steps
 {
     [Binding]
-    public class ItemNamesDisplayedSteps
+    public class ItemNamesDisplayedSteps : DriverCollection
     {
         HomePage homePage = new HomePage();
         LandingPage landingPage = new LandingPage();
@@ -20,7 +20,7 @@ namespace SwagLabsPOM.Steps
         [Given(@"I navigate to the app")]
         public void GivenINavigateToTheApp()
         {
-            DriverCollection.driver.Navigate().GoToUrl(LandingPageConstants.landingURL);
+            driver.Navigate().GoToUrl(LandingPageConstants.landingURL);
         }
 
         [Given(@"i login")]
