@@ -40,6 +40,5 @@ namespace SwagLabsPOM.Steps
         {            
             Assert.IsTrue(homePage.ItemNamesDisplayed());
         }
-
     }
 }

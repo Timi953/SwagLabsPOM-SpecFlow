@@ -15,33 +15,31 @@ namespace SwagLabsPOM.Steps
     public class LoginSteps : DriverCollection
     {
         LandingPage landingPage = new LandingPage();
+              
 
-        [Given(@"I have navigated to application")]
-        public void GivenIHaveNavigatedToApplication()
+        [Given(@"User has navigated to the application")]
+        public void GivenUserHasNavigatedToTheApplication()
         {
-            DriverCollection.driver.Navigate().GoToUrl(LandingPageConstants.landingURL);
+            driver.Navigate().GoToUrl(LandingPageConstants.landingURL);
         }
 
-        [Given(@"I enter username and password")]
-        public void GivenIEnterUsernameAndPassword(Table table)
+        [When(@"User enters (.*) and (.*)")]
+        public void WhenUserEntersAnd(string username, string password)
         {
-            dynamic data = table.CreateDynamicInstance();
-
-            landingPage.EnterUsernameAndPassword(data.UserName, data.Password);
+            landingPage.EnterUsernameAndPassword(username, password);
         }
 
-        [Given(@"I click login")]
-        public void GivenIClickLogin()
+        [When(@"User clicks login")]
+        public void WhenUserClicksLogin()
         {
             landingPage.ClickLogin();
         }
 
-        [Then(@"I should be logged in the application")]
-        public void ThenIShouldBeLoggedInTheApplication()
+        [Then(@"User should be logged in the application")]
+        public void ThenUserShouldBeLoggedInTheApplication()
         {
-            Assert.That(LandingPage.GetCurrentUrl(), Is.EqualTo("https://www.saucedemo.com/inventory.html")); 
+            Assert.That(LandingPage.GetCurrentUrl(), Is.EqualTo("https://www.saucedemo.com/inventory.html"));
         }
-
 
     }
 }
