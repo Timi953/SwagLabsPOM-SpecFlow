@@ -10,6 +10,7 @@ using System.Threading;
 
 namespace SwagLabsPOM.SwagLabsPageObject
 {
+    [TestFixture]
     public class Tests
     {
         [SetUp]
@@ -18,12 +19,12 @@ namespace SwagLabsPOM.SwagLabsPageObject
             LandingPage.open_driver(DriverCollection.Browser.Chrome);
             DriverCollection.driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(10);
             DriverCollection.driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
-
         }
 
         [Test]
         public void StandarUserLogin()
         {
+            
             LandingPage landingPage = new LandingPage();
             DriverCollection.driver.Navigate().GoToUrl(LandingPageConstants.landingURL);
                        
@@ -99,7 +100,6 @@ namespace SwagLabsPOM.SwagLabsPageObject
         [TearDown]
         public void TearDown()
         {
-
             DriverCollection.driver.Close();
             DriverCollection.driver.Quit();
             DriverCollection.driver.Dispose();

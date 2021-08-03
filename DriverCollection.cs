@@ -15,7 +15,6 @@ namespace SwagLabsPOM
         public static IWebDriver driver;
         public static IWebDriver open_driver(Browser browser)
         {
-            //driver = null;
             switch (browser)
             {
                 case Browser.Chrome:
