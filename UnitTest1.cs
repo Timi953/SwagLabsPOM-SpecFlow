@@ -31,13 +31,6 @@ namespace SwagLabsPOM.SwagLabsPageObject
             landingPage.LoginOperation(UserConstants.ID_STANDARD_USER, UserConstants.ID_PASSWORD);
 
             Assert.That(LandingPage.GetCurrentUrl(), Is.EqualTo("https://www.saucedemo.com/inventory.html"));
-
-            //WebDriverWait wait = new WebDriverWait(DriverCollection.driver, TimeSpan.FromSeconds(10));
-            //var element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id(ElementConstants.ID_MENU_BTN)));
-
-            //Actions action = new Actions(DriverCollection.driver);
-            //action.Click(element).Perform();
-
         }
 
         //[Test]

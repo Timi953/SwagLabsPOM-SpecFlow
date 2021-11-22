@@ -33,7 +33,7 @@ namespace SwagLabsPOM.SwagLabsPageObject
 
         #endregion
 
-
+        
         public bool ItemNamesDisplayed()
         {
             var itemsList = itemsClass.FindElements(By.ClassName(HomePageConstants.ID_ITEMS_CLASS));
@@ -50,7 +50,6 @@ namespace SwagLabsPOM.SwagLabsPageObject
                 }
             }
             return isValid;
-
         }
     }
 }
